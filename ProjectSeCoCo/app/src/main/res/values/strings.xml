@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Bienvenido a SeCoCo</string>
+    <string name="correo">Email</string>
+    <string name="Contrasn">Password</string>
+    <string name="Ingres">Login</string>
+    <string name="Regis">Register</string>
+    <string name="RE">Registro</string>
+    <string name="name">Nombres</string>
+    <string name="ape">Apellidos</string>
+    <string name="Eda">Edad</string>
+    <string name="num">Celular</string>
+    <string name="Dire">Dirección</string>
+    <string name="Crear">Crear Usuario</string>
+    <string name="ced">Cédula</string>
+    <string name="medico">EPS</string>
+    <string name="Local">Localidad</string>
+    <string name="man">Masculino</string>
+    <string name="women">Femenino</string>
+</resources>
