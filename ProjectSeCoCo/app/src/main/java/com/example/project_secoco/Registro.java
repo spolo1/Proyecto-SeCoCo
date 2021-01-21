@@ -14,10 +14,17 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Registro extends AppCompatActivity implements View.OnClickListener{
 
@@ -26,6 +33,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
     private Button regis;
     private FirebaseAuth mAuth;
     private ProgressDialog progressDialog;
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +53,6 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
         mAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
 
-
-
     }
     //Bóton regreso
     public void returnStart(View view){
@@ -65,7 +71,11 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
         String Localidad = txtlocal.getText().toString().trim();
         String crreo = txtmail.getText().toString().trim();
         String contrasena = pass.getText().toString();
+
+
+
         Intent intent = new Intent(this, MainActivity.class);
+
         if(TextUtils.isEmpty(crreo) && TextUtils.isEmpty(contrasena)) {
             Toast.makeText(this,"Rellene todos los campos para crear su usuario", Toast.LENGTH_LONG).show();
             return;
@@ -80,6 +90,31 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
                 if (task.isSuccessful()){
                     Toast.makeText(Registro.this, "Su usuario ha sido creado con exito", Toast.LENGTH_LONG).show();
                     startActivity(intent);
+                    //Cargar usuario en base de datos
+                    Map<String,Object> user = new HashMap();
+                    user.put("Nombres",name);
+                    user.put("Apellidos",lastName);
+                    user.put("Edad",age);
+                    user.put("Documento de Identificación", cedula);
+                    user.put("Celular", celular);
+                    user.put("Entidad prestadora de Salud", medicina);
+                    user.put("Dirección", casa);
+                    user.put("Localidad",Localidad);
+                    user.put("Correo electrónico", crreo);
+                    user.put("Contraseña",contrasena);
+
+                    db.collection("users")
+                            .add(user)
+                            .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                @Override
+                                public void onSuccess(DocumentReference documentReference) {
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                }
+                            });
                 }
                 if(task.getException() instanceof FirebaseAuthUserCollisionException){
                     Toast.makeText(Registro.this, "El usuario ya se encuentra registrado en la aplicación", Toast.LENGTH_LONG).show();
@@ -92,7 +127,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
         });
     }
 
-    //RadioButtons Genero
+    //RadioButton Genero
     private void relacion(){
         man = findViewById(R.id.Hombre);
         women = findViewById(R.id.Mujer);
