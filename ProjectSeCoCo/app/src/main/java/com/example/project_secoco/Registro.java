@@ -72,8 +72,6 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
         String crreo = txtmail.getText().toString().trim();
         String contrasena = pass.getText().toString();
 
-
-
         Intent intent = new Intent(this, MainActivity.class);
 
         if(TextUtils.isEmpty(crreo) && TextUtils.isEmpty(contrasena)) {
@@ -127,24 +125,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
         });
     }
 
-    //RadioButton Genero
-    private void relacion(){
-        man = findViewById(R.id.Hombre);
-        women = findViewById(R.id.Mujer);
 
-        man.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                String res = "Hombre";
-            }
-        });
-        women.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                String res = "Mujer";
-            }
-        });
-    }
 
     @Override
     public void onClick(View v) {

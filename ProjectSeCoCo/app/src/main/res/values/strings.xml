@@ -16,4 +16,17 @@
     <string name="Local">Localidad</string>
     <string name="man">Masculino</string>
     <string name="women">Femenino</string>
+    <string name="sintomas">Reportar sintomas</string>
+
+    <!--Sintomas-->
+    <string name="tempe">Fiebre</string>
+    <string name="gargan">Dolor de garganta</string>
+    <string name="nar">Congestión nasal</string>
+    <string name="tos">Tos</string>
+    <string name="resp">Dificultad para respirar</string>
+    <string name="cansan">Fatiga</string>
+    <string name="frio">Escalofrio</string>
+    <string name="musculo">Dolor de músculos</string>
+    <string name="ninguno">Ninguna de las anteriores</string>
+    <string name="send">Enviar sintomas</string>
 </resources>

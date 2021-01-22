@@ -6,34 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageButton
-        android:id="@+id/faceRe2"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="16dp"
-        android:background="?android:attr/colorBackground"
-        android:contentDescription="TODO"
-        android:scaleType="centerInside"
-        app:layout_constraintStart_toEndOf="@+id/GoogleRe"
-        app:layout_constraintTop_toBottomOf="@+id/Registro"
-        app:srcCompat="@drawable/artboard_6" />
-
-    <ImageButton
-        android:id="@+id/GoogleRe"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="16dp"
-        android:background="?android:attr/colorBackground"
-        android:contentDescription="TODO"
-        android:scaleType="centerInside"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.36"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Registro"
-        app:srcCompat="@drawable/artboard_5" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -114,5 +86,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Ingreso" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/signIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Registro" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
