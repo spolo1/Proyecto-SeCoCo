@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -49,6 +50,10 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         progressDialog = new ProgressDialog(this);
     }
 
+    public void returnHome(View view){
+        Intent intent = new Intent(this, Home.class);
+        startActivity(intent);
+    }
     public void cargarSintomas(){
         String x1 = s1.getText().toString();
         String x2 = s2.getText().toString();
@@ -63,6 +68,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         if(TextUtils.isEmpty(xnull)){
             Toast.makeText(this,"Rellene todos los campos", Toast.LENGTH_LONG).show();
         }
+
         progressDialog.setMessage("Cargando sintomas");
         progressDialog.show();
 
@@ -102,6 +108,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
             Sintomas.put("Dolor de músculos","False");
             Sintomas.put("Escalofrio","False");
             Sintomas.put("Ninguna de las anteriores", c9);
+            startActivity(new Intent(this, Home.class));
         }else{
             Sintomas.put("Fiebre",c1);
             Sintomas.put("Dolor de garganta",c2);
@@ -112,6 +119,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
             Sintomas.put("Dolor de músculos", c7);
             Sintomas.put("Escalofrio",c8);
             Sintomas.put("Ninguna de las anteriores", "Flase");
+            startActivity(new Intent(this, Home.class));
         }
 
 

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="55dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="100dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/seco"
+                android:textSize="20sp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/numCovid"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:contentDescription="TODO"
+                android:onClick="urlCasos"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/imagen_1" />
+
+            <ImageButton
+                android:id="@+id/prevention"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:onClick="urlPrevent"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/prenvcion2" />
+
+            <ImageButton
+                android:id="@+id/solo"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="aisla"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/aislamiento" />
+
+            <ImageButton
+                android:id="@+id/atention"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:onClick="atencion"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/lineas" />
+
+            <ImageButton
+                android:id="@+id/decret"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="decretos"
+                app:srcCompat="@drawable/drecretos" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <Button
+            android:id="@+id/trace"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="recorrido"
+            android:text="@string/recorridos" />
+
+        <Button
+            android:id="@+id/contact"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="contactoPersonas"
+            android:text="@string/contactos" />
+
+        <Button
+            android:id="@+id/sintom"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="reportarSintomas"
+            android:text="@string/sintomas" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

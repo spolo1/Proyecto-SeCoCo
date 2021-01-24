@@ -29,4 +29,10 @@
     <string name="musculo">Dolor de músculos</string>
     <string name="ninguno">Ninguna de las anteriores</string>
     <string name="send">Enviar sintomas</string>
+
+    <!--home-->
+    <string name="seco">Bienvenido a SeCoCo</string>
+    <string name="recorridos">Ver recorridos</string>
+    <string name="contactos">Ver contactos</string>
+    <string name="sintoma">Informar sintomas</string>
 </resources>

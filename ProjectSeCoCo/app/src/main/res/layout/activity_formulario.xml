@@ -7,13 +7,25 @@
     tools:context=".Formulario">
 
     <ScrollView
+        android:id="@+id/scrollView3"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/button_rounded"
+                android:onClick="returnHome"
+                app:srcCompat="@drawable/abc_vector_test" />
 
             <TextView
                 android:id="@+id/textView3"
@@ -21,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="100dp"
                 android:layout_marginLeft="100dp"
-                android:layout_marginTop="64dp"
+                android:layout_marginTop="0dp"
 
                 android:layout_marginBottom="20dp"
                 android:text="@string/sintomas"

@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         String correo = txtUser.getText().toString().trim();
         String passwd = txtPassword.getText().toString().trim();
-        Intent intent = new Intent(this, Formulario.class);
+        Intent intent = new Intent(this, Home.class);
         if(TextUtils.isEmpty(correo)){
             makeText(this, "Ingrese un correo", LENGTH_LONG).show();
         }
