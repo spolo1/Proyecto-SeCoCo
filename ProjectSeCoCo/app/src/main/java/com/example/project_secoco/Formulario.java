@@ -143,4 +143,22 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
     public void onClick(View v) {
         cargarSintomas();
     }
+
+    //Botones interacciones inferior
+    public void reportarSintomas(View view){
+        Intent intent = new Intent(this, Formulario.class);
+        startActivity(intent);
+    }
+    public void contactoPersonas(View view){
+        Intent intent = new Intent(this, Contactos.class);
+        startActivity(intent);
+    }
+    public void recorrido(View view){
+        Intent intent = new Intent(this, Formulario.class);
+        startActivity(intent);
+    }
+    public void result(View view){
+        Intent intent = new Intent(this, Resultados.class);
+        startActivity(intent);
+    }
 }

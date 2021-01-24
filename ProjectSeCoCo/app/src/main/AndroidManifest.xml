@@ -3,6 +3,8 @@
     package="com.example.project_secoco">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".Recorridos"></activity>
+        <activity android:name=".Resultados"></activity>
+        <activity android:name=".Recorridos" />
         <activity android:name=".Contactos" />
         <activity android:name=".Home" />
         <activity android:name=".Formulario" />

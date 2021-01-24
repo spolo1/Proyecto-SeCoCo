@@ -34,7 +34,11 @@ public class Home extends AppCompatActivity {
         startActivity(intent);
     }
     public void recorrido(View view){
-        Intent intent = new Intent(this, Formulario.class);
+        Intent intent = new Intent(this, Recorridos.class);
+        startActivity(intent);
+    }
+    public void result(View view){
+        Intent intent = new Intent(this, Resultados.class);
         startActivity(intent);
     }
 

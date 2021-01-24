@@ -1,4 +1,5 @@
 <resources>
+    <!--Login y Registro-->
     <string name="app_name">Bienvenido a SeCoCo</string>
     <string name="correo">Email</string>
     <string name="Contrasn">Password</string>
@@ -35,4 +36,20 @@
     <string name="recorridos">Ver recorridos</string>
     <string name="contactos">Ver contactos</string>
     <string name="sintoma">Informar sintomas</string>
+    <string name="Repor">Resultado</string>
+
+    <!--Ubicación-->
+    <string name="Ubicaci">Zonas transitadas</string>
+
+    <!--Resultados prueba-->
+    <string name="resu">Reporte resultados prueba</string>
+    <string name="Fecha">Fecha toma examen</string>
+    <string name="salud">Entidad</string>
+    <string name="Result">Resultado</string>
+    <string name="esx">Entidad examen</string>
+    <string name="guar">Guardar resultado</string>
+    <string name="po">Positivo</string>
+    <string name="neg">Negativo</string>
+    <string name="Fe">Fecha</string>
+
 </resources>
