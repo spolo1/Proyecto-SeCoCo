@@ -16,12 +16,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -35,6 +37,7 @@ public class Resultados extends AppCompatActivity implements View.OnClickListene
     private EditText fecha,entidad;
     private int day,month,year;
     private RadioGroup radioGroup;
+    private ImageButton logout;
     private RadioButton radioButton;
     private ProgressDialog progressDialog;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -48,6 +51,16 @@ public class Resultados extends AppCompatActivity implements View.OnClickListene
         fecha = (EditText) findViewById(R.id.fecha);
         entidad = (EditText) findViewById(R.id.entidadexam);
         radioGroup = findViewById(R.id.radioGroup);
+        logout = (ImageButton) findViewById(R.id.Logout);
+
+        logout.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Toast.makeText(Resultados.this, "Cerrrando sesión",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Resultados.this, MainActivity.class));
+            }
+        });
 
         btnFecha.setOnClickListener(this);
         btncarga.setOnClickListener(this);

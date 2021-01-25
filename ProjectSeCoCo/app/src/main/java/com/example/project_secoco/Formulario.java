@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.dynamic.IFragmentWrapper;
@@ -32,6 +33,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
     private ProgressDialog progressDialog;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private FirebaseAuth mAuth;
+    private ImageButton logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,16 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         sNull = (CheckBox) findViewById(R.id.checkBox9);
         mAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
+        logout = (ImageButton) findViewById(R.id.Logout);
+
+        logout.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Toast.makeText(Formulario.this, "Cerrrando sesión",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Formulario.this, MainActivity.class));
+            }
+        });
     }
 
     public void returnHome(View view){
