@@ -16,6 +16,15 @@
 
 
         <ImageButton
+            android:id="@+id/Home"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/artboard_13" />
+
+        <ImageButton
             android:id="@+id/recorridos"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="80dp"
@@ -44,15 +53,6 @@
             android:onClick="reportarSintomas"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/artboard_10" />
-
-        <ImageButton
-            android:id="@+id/Home"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="80dp"
-            android:layout_height="70dp"
-            android:layout_weight="1"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/artboard_13" />
 
         <ImageButton
             android:id="@+id/Resultados"

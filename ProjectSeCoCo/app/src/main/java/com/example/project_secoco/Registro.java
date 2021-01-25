@@ -25,6 +25,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 public class Registro extends AppCompatActivity implements View.OnClickListener{
 
@@ -53,7 +55,11 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
         mAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
 
+
     }
+
+
+
     //Bóton regreso
     public void returnStart(View view){
         Intent intent = new Intent(this, MainActivity.class);
@@ -100,7 +106,6 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
                     user.put("Localidad",Localidad);
                     user.put("Correo electrónico", crreo);
                     user.put("Contraseña",contrasena);
-
                     db.collection("users")
                             .add(user)
                             .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
