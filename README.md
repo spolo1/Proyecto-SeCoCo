@@ -36,3 +36,5 @@ Lo principal sería centrarnos en el perfil de diagnostico, después continuar c
 Recuerden que para el miercoles tenemos que presentar Recorridos y contactos, así que centrarnos en diagnostico, seguimiento y Persona para esta entrega.
 
 Cualquier duda por favor escribirla en el grupo de WhatsApp para colaborarnos entre todos
+
+Por el momento si van a trabajar en un perfil, en el Main_Acitiviy esta una parte de codigo donde en comentario estan todos los perfiles, simplemente comenten el actual y descomenten el que van a utilizar, para que cuando corran el codigo solamente entren a ese perfil.
