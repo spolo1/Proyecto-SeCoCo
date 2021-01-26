@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -14,9 +15,16 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Home_personas extends AppCompatActivity {
 
+    private static String correoUser;
     private Button btnCasos;
     private ImageButton logout;
     private String urlCasos,urlPrevencion,urlAislamiento, urlAtencion, urlDrecreto;
+
+    public static void usuarioUtilizandoApp(String correo) {
+        correoUser=correo;
+        Log.d("desde personas: ","llego el correo "+correo);
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

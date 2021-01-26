@@ -8,6 +8,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -21,6 +22,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import static android.widget.Toast.*;
 
@@ -32,6 +36,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private SignInButton signInButton;
     private static final int SIGN_IN_CODE =777;
     private ProgressDialog progressDialog;
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private Intent intentDiagnostico, intenPersonas, intentSeguimiento, intentDesicion;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,11 +76,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String correo = txtUser.getText().toString().trim();
         String passwd = txtPassword.getText().toString().trim();
 
-        //Homes dependiendo del tipo de usuario
-        //Intent intent = new Intent(this, Home_personas.class);
-        //Intent intent = new Intent(this,Home_Diagnostico.class);
-        //Intent intent = new Intent(this,Home_Seguimiento.class);
-        Intent intent = new Intent(this,Home_Decisiones.class);
+        intenPersonas = new Intent(this, Home_personas.class);
+        intentDiagnostico = new Intent(this,Home_Diagnostico.class);
+        intentSeguimiento = new Intent(this,Home_Seguimiento.class);
+        intentDesicion = new Intent(this,Home_Decisiones.class);
+
         if(TextUtils.isEmpty(correo)){
             makeText(this, "Ingrese un correo", LENGTH_LONG).show();
         }
@@ -88,16 +95,50 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             progressDialog.setMessage("Iniciando sesión");
                             progressDialog.show();
                             makeText(MainActivity.this, "Bienvenido a SeCoCo", LENGTH_LONG).show();
-                            startActivity(intent);
+
+                        //inicia las interfaces segun ROL
+                            db.collection("users").whereEqualTo("Correo electrónico",correo)
+                                    .get()
+                                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                            if (task.isSuccessful()) {
+                                                for (QueryDocumentSnapshot document : task.getResult()) {
+
+                                                    if(document.getData().get("Tipo de perfil").equals("Diagnostico")){
+                                                        Home_Diagnostico.usuarioUtilizandoApp(correo);
+                                                        startActivity(intentDiagnostico);
+                                                    }else if(document.getData().get("Tipo de perfil").equals("Persona")){
+                                                        Home_personas.usuarioUtilizandoApp(correo);
+                                                        startActivity(intenPersonas);
+                                                    }else if(document.getData().get("Tipo de perfil").equals("Seguimiento")){
+                                                        Home_Seguimiento.usuarioUtilizandoApp(correo);
+                                                        startActivity(intentSeguimiento);
+                                                    }else if(document.getData().get("Tipo de perfil").equals("Desicion")){
+                                                        Home_Decisiones.usuarioUtilizandoApp(correo);
+                                                        startActivity(intentDesicion);
+                                                    }
+                                                }
+                                            } else {
+                                                Log.w("Contactos", "Error getting documents.", task.getException());
+                                            }
+                                        }
+                                    });
+
+                            Log.d("Contactos", "no entre al db");
                         } else {
                             makeText(MainActivity.this, "Datos erroneos", LENGTH_LONG).show();
 
                         }
                     }
                 });
+
+
+
     }
 
-    
+
+
 
 
     public void register(View view){
@@ -108,6 +149,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         Ingresar();
+
     }
 
     @Override
