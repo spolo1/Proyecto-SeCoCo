@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Contactos_Personas">
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contactos Personas"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollView6"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
+        android:layout_marginBottom="72dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView6">
+
+
+        <ImageButton
+            android:id="@+id/Home"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:onClick="returnHome"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/artboard_13" />
+
+        <ImageButton
+            android:id="@+id/citar_toma"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:onClick="reportarSintomas"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/artboard_10" />
+
+        <ImageButton
+            android:id="@+id/recorridos"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:onClick="recorrido"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/artboard_9" />
+
+        <ImageButton
+            android:id="@+id/contactos"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/artboard_11" />
+
+        <ImageButton
+            android:id="@+id/Logout"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/artboard_15" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

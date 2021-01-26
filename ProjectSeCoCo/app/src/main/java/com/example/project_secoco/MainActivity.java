@@ -9,9 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -68,11 +66,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 }
 
     private void Ingresar(){
-
-
         String correo = txtUser.getText().toString().trim();
         String passwd = txtPassword.getText().toString().trim();
-        Intent intent = new Intent(this, Home.class);
+
+        //Homes dependiendo del tipo de usuario
+        //Intent intent = new Intent(this, Home_personas.class);
+        //Intent intent = new Intent(this,Home_Diagnostico.class);
+        //Intent intent = new Intent(this,Home_Seguimiento.class);
+        Intent intent = new Intent(this,Home_Decisiones.class);
         if(TextUtils.isEmpty(correo)){
             makeText(this, "Ingrese un correo", LENGTH_LONG).show();
         }

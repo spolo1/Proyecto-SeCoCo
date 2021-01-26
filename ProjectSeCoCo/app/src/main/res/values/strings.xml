@@ -18,6 +18,7 @@
     <string name="man">Masculino</string>
     <string name="women">Femenino</string>
     <string name="sintomas">Reportar sintomas</string>
+    <string name="tipo">Tipo de Usuario</string>
 
     <!--Sintomas-->
     <string name="tempe">Fiebre</string>
@@ -33,10 +34,7 @@
 
     <!--home-->
     <string name="seco">Bienvenido a SeCoCo</string>
-    <string name="recorridos">Ver recorridos</string>
-    <string name="contactos">Ver contactos</string>
-    <string name="sintoma">Informar sintomas</string>
-    <string name="Repor">Resultado</string>
+
 
     <!--Ubicación-->
     <string name="Ubicaci">Zonas transitadas</string>
@@ -52,4 +50,12 @@
     <string name="neg">Negativo</string>
     <string name="Fe">Fecha</string>
 
+    <!--Cita-->
+    <string name="cit">Agendación de Citas</string>
+    <string name="date">Seleccionar fecha</string>
+    <string name="fe">Fecha:</string>
+    <string name="hour">Hora:</string>
+    <string name="tim">Seleccionar hora</string>
+    <string name="mes">Mensaje</string>
+    <string name="enviar">Agendar cita</string>
 </resources>

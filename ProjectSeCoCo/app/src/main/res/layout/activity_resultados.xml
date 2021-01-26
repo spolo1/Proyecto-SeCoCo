@@ -6,33 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".Resultados">
 
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:text="@string/resu"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ScrollView
         android:id="@+id/scrollView4"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="48dp"
         android:layout_marginLeft="48dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="48dp"
         android:layout_marginRight="48dp"
         android:layout_marginBottom="71dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="30dp"
-                android:text="@string/resu"
-                android:textSize="20sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -65,30 +68,28 @@
                     android:ems="10"
                     android:inputType="textPersonName" />
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="60dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView8"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/salud" />
-
                 <EditText
                     android:id="@+id/entidadexam"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="50sp"
                     android:layout_marginTop="15dp"
                     android:background="@drawable/button_rounded_border"
                     android:ems="10"
                     android:hint="@string/salud"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:onClick="cargarDatos" />
+
             </LinearLayout>
+
+            <EditText
+                android:id="@+id/send_result"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginTop="16sp"
+                android:background="@drawable/button_rounded_border"
+                android:ems="10"
+                android:hint="@string/correo"
+                android:inputType="textPersonName" />
 
             <TextView
                 android:id="@+id/textView9"
@@ -96,19 +97,19 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="90dp"
                 android:layout_marginLeft="90dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="30sp"
                 android:text="@string/Result"
                 android:textSize="25sp" />
 
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="30sp"
                 android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/radioButton"
+                    android:id="@+id/radioPosit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="-5dp"
@@ -117,7 +118,7 @@
                     android:text="@string/po" />
 
                 <RadioButton
-                    android:id="@+id/radioButton2"
+                    android:id="@+id/radioNeg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="120dp"
@@ -126,19 +127,33 @@
                     android:text="@string/neg" />
             </RadioGroup>
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/mesage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="120sp"
+                    android:background="@drawable/button_rounded_border"
+                    android:hint="@string/mes" />
+            </com.google.android.material.textfield.TextInputLayout>
+
             <Button
                 android:id="@+id/subir"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/button_rounded"
+                android:onClick="cargarDatos"
                 android:text="@string/guar" />
 
         </LinearLayout>
     </ScrollView>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -157,36 +172,6 @@
             app:srcCompat="@drawable/artboard_13" />
 
         <ImageButton
-            android:id="@+id/recorridos"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="80dp"
-            android:layout_height="70dp"
-            android:layout_weight="1"
-            android:onClick="recorrido"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/artboard_9" />
-
-        <ImageButton
-            android:id="@+id/contactos"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="80dp"
-            android:layout_height="70dp"
-            android:layout_weight="1"
-            android:onClick="contactoPersonas"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/artboard_11" />
-
-        <ImageButton
-            android:id="@+id/Sintoams"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="80dp"
-            android:layout_height="70dp"
-            android:layout_weight="1"
-            android:onClick="reportarSintomas"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/artboard_10" />
-
-        <ImageButton
             android:id="@+id/Resultados"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="80dp"
@@ -197,11 +182,21 @@
             app:srcCompat="@drawable/artboard_14" />
 
         <ImageButton
-            android:id="@+id/Logout"
+            android:id="@+id/citar_toma"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="80dp"
             android:layout_height="70dp"
             android:layout_weight="1"
+            android:onClick="cita"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/artboard_10" />
+
+        <ImageButton
+            android:id="@+id/Logout"
             style="?android:attr/borderlessButtonStyle"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/artboard_15" />
 

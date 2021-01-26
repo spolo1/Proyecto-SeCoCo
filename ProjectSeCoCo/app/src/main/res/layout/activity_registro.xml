@@ -193,6 +193,24 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/abc_vector_test" />
 
+    <EditText
+        android:id="@+id/tipousuario"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/button_rounded_border"
+        android:ems="10"
+        android:hint="@string/tipo"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contase" />
+
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="334dp"
@@ -205,7 +223,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contase">
+        app:layout_constraintTop_toBottomOf="@+id/tipousuario">
 
         <RadioButton
             android:id="@+id/Mujer"

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Citar_Toma_de_Muestras">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView4">
+
+
+        <ImageButton
+            android:id="@+id/Home"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:onClick="returnHome"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/artboard_13" />
+
+        <ImageButton
+            android:id="@+id/Resultados"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:onClick="result"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/artboard_14" />
+
+        <ImageButton
+            android:id="@+id/citar_toma"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/artboard_10" />
+
+        <ImageButton
+            android:id="@+id/Logout"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/artboard_15" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/cit"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
+        android:layout_marginBottom="71dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100sp"
+                android:text="@string/fe"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/selectDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="75sp"
+                android:layout_marginLeft="75sp"
+                android:layout_marginTop="-32sp"
+                android:text="@string/date"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:text="@string/hour"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/selec_hour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="62sp"
+                android:layout_marginLeft="62sp"
+                android:layout_marginTop="-33sp"
+                android:text="@string/tim"
+                android:textSize="24sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/message"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="30sp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="150sp"
+                    android:background="@drawable/button_rounded_border"
+                    android:hint="@string/mes" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <EditText
+                android:id="@+id/correo"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginTop="60sp"
+                android:layout_weight="1"
+                android:background="@drawable/button_rounded_border"
+                android:ems="10"
+                android:hint="@string/correo"
+                android:inputType="textPersonName" />
+
+            <Button
+                android:id="@+id/send_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60sp"
+                android:layout_weight="1"
+                android:background="@drawable/button_rounded"
+                android:onClick="sendMessage"
+                android:text="@string/enviar" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,7 +13,6 @@ import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.google.android.gms.dynamic.IFragmentWrapper;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -23,7 +22,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
-import static android.widget.Toast.LENGTH_LONG;
 import static android.widget.Toast.makeText;
 
 public class Formulario extends AppCompatActivity implements View.OnClickListener{
@@ -63,7 +61,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
     }
 
     public void returnHome(View view){
-        Intent intent = new Intent(this, Home.class);
+        Intent intent = new Intent(this, Home_personas.class);
         startActivity(intent);
     }
     public void cargarSintomas(){
@@ -120,7 +118,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
             Sintomas.put("Dolor de músculos","False");
             Sintomas.put("Escalofrio","False");
             Sintomas.put("Ninguna de las anteriores", c9);
-            startActivity(new Intent(this, Home.class));
+            startActivity(new Intent(this, Home_personas.class));
         }else{
             Sintomas.put("Fiebre",c1);
             Sintomas.put("Dolor de garganta",c2);
@@ -131,7 +129,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
             Sintomas.put("Dolor de músculos", c7);
             Sintomas.put("Escalofrio",c8);
             Sintomas.put("Ninguna de las anteriores", "Flase");
-            startActivity(new Intent(this, Home.class));
+            startActivity(new Intent(this, Home_personas.class));
         }
 
 
@@ -162,15 +160,11 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         startActivity(intent);
     }
     public void contactoPersonas(View view){
-        Intent intent = new Intent(this, Contactos.class);
+        Intent intent = new Intent(this, Contactos_Personas.class);
         startActivity(intent);
     }
     public void recorrido(View view){
-        Intent intent = new Intent(this, Formulario.class);
-        startActivity(intent);
-    }
-    public void result(View view){
-        Intent intent = new Intent(this, Resultados.class);
+        Intent intent = new Intent(this, Recorridos_Personas.class);
         startActivity(intent);
     }
 }

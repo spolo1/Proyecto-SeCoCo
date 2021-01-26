@@ -31,10 +31,11 @@ import com.google.firebase.storage.StorageReference;
 public class Registro extends AppCompatActivity implements View.OnClickListener{
 
     private RadioButton man, women;
-    private EditText txtname, txtapellido, txtage, txtidenti, txtnumber, txtmedic, txtplace, txtlocal, txtmail, pass;
+    private EditText txtname, txtapellido, txtage, txtidenti, txtnumber, txtmedic, txtplace, txtlocal, txtmail, pass, txtperfil;
     private Button regis;
     private FirebaseAuth mAuth;
     private ProgressDialog progressDialog;
+    private RadioButton rman,rwom;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
@@ -53,7 +54,10 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
         pass = (EditText) findViewById(R.id.contase);
         regis = (Button) findViewById(R.id.registro);
         mAuth = FirebaseAuth.getInstance();
+        txtperfil = (EditText) findViewById(R.id.tipousuario);
         progressDialog = new ProgressDialog(this);
+        rman = (RadioButton) findViewById(R.id.Hombre);
+        rwom = (RadioButton) findViewById(R.id.Mujer);
 
 
     }
@@ -77,6 +81,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
         String Localidad = txtlocal.getText().toString().trim();
         String crreo = txtmail.getText().toString().trim();
         String contrasena = pass.getText().toString();
+        String perfil = txtperfil.getText().toString().trim();
 
         Intent intent = new Intent(this, MainActivity.class);
 
@@ -92,6 +97,13 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
+                    String cad = "";
+                    if(rman.isChecked()){
+                        cad = "Masculino";
+                    }
+                    if(rwom.isChecked()){
+                        cad = "Femenino";
+                    }
                     Toast.makeText(Registro.this, "Su usuario ha sido creado con exito", Toast.LENGTH_LONG).show();
                     startActivity(intent);
                     //Cargar usuario en base de datos
@@ -106,6 +118,8 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
                     user.put("Localidad",Localidad);
                     user.put("Correo electrónico", crreo);
                     user.put("Contraseña",contrasena);
+                    user.put("Tipo de perfil",perfil);
+                    user.put("Genero",cad);
                     db.collection("users")
                             .add(user)
                             .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {

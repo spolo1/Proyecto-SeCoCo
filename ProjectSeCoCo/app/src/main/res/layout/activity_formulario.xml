@@ -26,6 +26,15 @@
             app:srcCompat="@drawable/artboard_13" />
 
         <ImageButton
+            android:id="@+id/citar_toma"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/artboard_10" />
+
+        <ImageButton
             android:id="@+id/recorridos"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="80dp"
@@ -44,25 +53,6 @@
             android:onClick="contactoPersonas"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/artboard_11" />
-
-        <ImageButton
-            android:id="@+id/Sintoams"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="80dp"
-            android:layout_height="70dp"
-            android:layout_weight="1"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/artboard_10" />
-
-        <ImageButton
-            android:id="@+id/Resultados"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="80dp"
-            android:layout_height="70dp"
-            android:layout_weight="1"
-            android:onClick="result"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/artboard_14" />
 
         <ImageButton
             android:id="@+id/Logout"

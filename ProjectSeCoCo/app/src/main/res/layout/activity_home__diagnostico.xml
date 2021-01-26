@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home_Diagnostico">
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/seco"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40sp"
+        android:layout_marginBottom="72dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/numCovid"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:contentDescription="TODO"
+                android:onClick="urlCasos"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/imagen_1" />
+
+            <ImageButton
+                android:id="@+id/prevention"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:onClick="urlPrevent"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/prenvcion2" />
+
+            <ImageButton
+                android:id="@+id/solo"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="aisla"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/aislamiento" />
+
+            <ImageButton
+                android:id="@+id/atention"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:onClick="atencion"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/lineas" />
+
+            <ImageButton
+                android:id="@+id/decret"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="decretos"
+                app:srcCompat="@drawable/drecretos" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2">
+
+
+        <ImageButton
+            android:id="@+id/Home"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/artboard_13" />
+
+        <ImageButton
+            android:id="@+id/resultado"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:onClick="result"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/artboard_14" />
+
+        <ImageButton
+            android:id="@+id/citar_toma"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:onClick="cita"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/artboard_10" />
+
+        <ImageButton
+            android:id="@+id/Logout"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/artboard_15" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
