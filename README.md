@@ -9,16 +9,6 @@ Decisiones para verificar que un usuario en cuarentena si la cumpla
 
 Para cada perfil hacen falta cosas
 
-En el registro de la aplciación se puede ingresar ahora el perfil donde preferiblemente ingresen es: Personas, Diagnostico, Seguimiento, Decision
-para identificar cual perfil van a ser
-
-En el Main_Activity hace falta:
--Crear la manera para que en base al perfil guardado en firestore me abra un perfil en especifico(los 4 perfiles mencionados arriba)
-
-En el perfil de Diagnostico hace falta:
--Guardar citas médicas en la base de datos - apuntando al Id del usuario al cual se le asigno (se puede realizar uso del correo porque se solicita el correo para enviar el    mensaje)
--Los resultados de la prueba tienen que ser apuntados al Id del usuario a la cual se le asigno (se puede realizar uso del correo porque se solicita el correo para enviar el mensaje)
-
 En el perfil Usuario hace falta:
 -Apuntar los sintomas al usuario en la base de datos (Usar el Id o el correo)
 -Diseñar interfaz de recorridos para saber cuales recorridos ha realizado y su historial 
